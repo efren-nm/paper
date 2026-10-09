@@ -1,0 +1,80 @@
+// Reconstructed from arXiv_draft_v5.idml and its 18-page PDF.
+// Typography deliberately changed to Libertinus.
+// Dimensions are points unless otherwise indicated.
+#let page-width = 595.276pt
+#let page-height = 841.89pt
+#let inner-margin = 36pt
+#let column-gap = 9.6pt
+#let text-column-width = 258pt
+
+#let paper-style(body) = {
+  set page(
+    paper: "a4",
+    margin: (left: 36pt, right: 33.5pt, top: 36pt, bottom: 54pt),
+    numbering: "1",
+    number-align: center + bottom,
+  )
+  set text(font: "Libertinus Serif", size: 10pt, fill: black, lang: "en")
+  show math.equation: set text(font: "Libertinus Math")
+  set par(justify: true, first-line-indent: 8.5pt, leading: 2.5pt, spacing: 0pt)
+  set heading(numbering: none)
+  show heading: it => { set par(first-line-indent: 0pt); it }
+  body
+}
+
+#let paper-title(body) = {
+  set par(first-line-indent: 0pt, justify: false)
+  text(size: 26pt, weight: "bold", body)
+  v(11.34pt)
+}
+#let paper-authors(body) = {
+  set par(first-line-indent: 0pt, justify: false)
+  text(size: 12pt, weight: "light", body)
+  v(12pt)
+}
+#let paper-abstract(body) = {
+  set par(first-line-indent: 0pt, justify: true)
+  text(size: 10pt, weight: "bold", body)
+  v(12.76pt)
+}
+#let affiliation-block(body) = {
+  set par(first-line-indent: 0pt, justify: false, leading: 1pt)
+  text(size: 8pt, body)
+}
+#let paper-columns(body) = columns(2, gutter: column-gap)[#body]
+#let paper-section(title) = {
+  v(3pt)
+  block(below: 3pt)[#text(size: 10pt, weight: "bold")[#title]]
+}
+#let paper-subtitle(title) = {
+  block(above: 5.67pt, below: 2.83pt)[#text(style: "italic")[#title]]
+}
+#let figure-caption(number, body) = {
+  set par(first-line-indent: 0pt, justify: false, leading: 3pt)
+  text(size: 8pt)[*Figure #number |* #body]
+}
+#let table-caption(number, body) = {
+  set par(first-line-indent: 0pt, justify: false)
+  text(size: 8pt)[*Table #number |* #body]
+}
+#let method-par(label, body) = {
+  set par(first-line-indent: 0pt, leading: 2.5pt, spacing: 5.67pt)
+  text(size: 9pt)[*#label* #body]
+}
+#let supplementary-section(title) = {
+  block(above: 5.67pt, below: 5.67pt)[#text(size: 16pt, weight: "bold")[#title]]
+}
+#let supplementary-subsection(title) = {
+  block(below: 5.67pt)[#text(size: 13pt)[#title]]
+}
+#let supplementary-body(body) = {
+  set par(justify: true, first-line-indent: 8.65pt, leading: 2.5pt, spacing: 2.83pt)
+  pad(left: 28.35pt, right: 28.35pt, body)
+}
+#let wide-figure(image-content, number, caption) = {
+  block(breakable: false, width: 100%)[
+    #image-content
+    #figure-caption(number, caption)
+  ]
+}
+#let references-heading() = paper-section([References])
