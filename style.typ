@@ -16,6 +16,12 @@
   )
   set text(font: "Libertinus Serif", size: 10pt, fill: black, lang: "en")
   show math.equation: set text(font: "Libertinus Math")
+  // Native figure captions retain Typst's counter and cross-reference machinery.
+  // Match the InDesign style: "Figure 1 | Bold title. Description..."
+  show figure.caption.where(kind: image): it => {
+    set par(first-line-indent: 0pt, justify: false, leading: 3pt)
+    text(size: 8pt)[*#it.supplement #context it.counter.display(it.numbering) |* #it.body]
+  }
   set par(justify: true, first-line-indent: 8.5pt, leading: 2.5pt, spacing: 0pt)
   set heading(numbering: none)
   show heading: it => { set par(first-line-indent: 0pt); it }
@@ -49,9 +55,18 @@
 #let paper-subtitle(title) = {
   block(above: 5.67pt, below: 2.83pt)[#text(style: "italic")[#title]]
 }
-#let figure-caption(number, body) = {
-  set par(first-line-indent: 0pt, justify: false, leading: 3pt)
-  text(size: 8pt)[*Figure #number |* #body]
+// Create a numbered, referenceable image figure.
+// Put a Typst label immediately after the call:  #paper-figure(...) <fig:sample>
+// The title is bold; the remaining descriptive caption is regular weight.
+// 'content' may be image("..."), a diagram, or any Typst content.
+#let paper-figure(content, title: [], caption: [], width: 100%) = {
+  figure(
+    block(width: width)[#content],
+    caption: [#strong(title) #caption],
+    kind: image,
+    supplement: [Figure],
+    numbering: "1",
+  )
 }
 #let table-caption(number, body) = {
   set par(first-line-indent: 0pt, justify: false)
@@ -71,10 +86,8 @@
   set par(justify: true, first-line-indent: 8.65pt, leading: 2.5pt, spacing: 2.83pt)
   pad(left: 28.35pt, right: 28.35pt, body)
 }
-#let wide-figure(image-content, number, caption) = {
-  block(breakable: false, width: 100%)[
-    #image-content
-    #figure-caption(number, caption)
-  ]
-}
+// Legacy compatibility: prefer paper-figure for automatically numbered figures.
+#let wide-figure(image-content, title, caption) = paper-figure(
+  image-content, title: title, caption: caption,
+)
 #let references-heading() = paper-section([References])

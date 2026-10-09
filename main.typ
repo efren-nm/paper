@@ -2,7 +2,7 @@
 #show: paper-style
 
 #paper-title[Monolayer-to-mesoscale modulation of the optical properties in 2D CrI₃ mapped by hyperspectral microscopy]
-#paper-authors[Marta Galbiati¹†, Fernando Ramiro-Manzano¹,²†, José Joaquín Pérez Grau¹, Fernando Cantos-Prieto¹, Jaume Meseguer-Sanchez¹, Ivona Kosic¹, Filippo Mione¹, Ana Pallarés Vilar¹, Andrés Cantarero¹, David Soriano³,⁴, and Efrén Navarro-Moratalla¹\*]
+#paper-authors[Marta Galbiati¹\*†, Fernando Ramiro-Manzano¹,²\*†, José Joaquín Pérez Grau¹, Fernando Cantos-Prieto¹, Jaume Meseguer-Sanchez¹, Ivona Kosic¹, Filippo Mione¹, Ana Pallarés Vilar¹, Andrés Cantarero¹, David Soriano³,⁴, and Efrén Navarro-Moratalla¹\*]
 
 // Main article: two columns, matching pages 1–5 of the reference.
 #paper-columns[
@@ -16,7 +16,15 @@
 
   The optical response can be represented by a frequency-dependent dielectric function $epsilon(omega) = epsilon_1(omega) - i epsilon_2(omega)$.
 
-  #figure-caption(1)[Visible-range transmittance spectra of CrI₃ crystals with different layer number. Insert your figure here, preferably as an SVG, PNG or PDF.]
+  // Replace the rectangle with image("figures/transmittance.png", width: 100%).
+  // The label must follow the function call, not be written inside it.
+  #paper-figure(
+    rect(width: 100%, height: 85pt, stroke: 0.5pt + gray),
+    title: [Visible-range transmittance spectra of CrI₃ crystals.],
+    caption: [Measurements for different layer numbers.],
+  ) <fig:transmittance>
+
+  As shown in @fig:transmittance, the optical response changes with thickness.
 
   #paper-section[References]
   The bibliography is stored in #text(font: "Libertinus Mono")[references.yml]. Insert a Typst citation such as @novoselov2005graphene and enable the bibliography at the end of the final article.

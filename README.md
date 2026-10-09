@@ -17,3 +17,26 @@ Run `typst compile main.typ`. Fonts must include Libertinus Serif, Libertinus Ma
 
 ## Fidelity limitations
 Indesign uses individually positioned text frames and placed artwork. This sample does not reproduce the original article page-for-page, and is not compiled/visually verified in this environment because the Typst binary is unavailable. In particular, precise first-page affiliations, full-page figure placement, and all 18 pages of article content still need a production pass.
+
+## Figures with captions and cross-references
+
+In `main.typ` (after `#import "style.typ": *` and `#show: paper-style`):
+
+```typst
+#paper-figure(
+  image("figures/example.png", width: 100%),
+  title: [A descriptive figure title.],
+  caption: [Details of the measurement, conditions, and plotted data.],
+) <fig:example>
+
+See @fig:example for the measurement.
+```
+
+Figures are numbered automatically, including when inserted or reordered. The
+caption renders as **Figure 1 | A descriptive figure title.** Details...; the
+name and number come from Typst's native `figure`, so `@fig:example` is an
+automatic cross-reference. No manual numbering is needed.
+
+When using `paper-columns`, figures are column-width by default. For full-page
+width figures, place the figure outside the two-column content block (or
+restructure the relevant portion of the document into separate column blocks).
