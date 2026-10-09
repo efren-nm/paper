@@ -10,6 +10,16 @@
 
   The dependence of the physical properties of van der Waals materials with the number of layers has been the flagship of two-dimensional (2D) materials since their discovery. In general, this layer dependence gains importance upon approaching the single layer limit, where the strict confinement of electrons in a 2D lattice imposes dramatic changes in the electronic structure of the crystal.
 
+    The dependence of the physical properties of van der Waals materials with the number of layers has been the flagship of two-dimensional (2D) materials since their discovery. In general, this layer dependence gains importance upon approaching the single layer limit, where the strict confinement of electrons in a 2D lattice imposes dramatic changes in the electronic structure of the crystal.
+
+      The dependence of the physical properties of van der Waals materials with the number of layers has been the flagship of two-dimensional (2D) materials since their discovery. In general, this layer dependence gains importance upon approaching the single layer limit, where the strict confinement of electrons in a 2D lattice imposes dramatic changes in the electronic structure of the crystal.
+
+        The dependence of the physical properties of van der Waals materials with the number of layers has been the flagship of two-dimensional (2D) materials since their discovery. In general, this layer dependence gains importance upon approaching the single layer limit, where the strict confinement of electrons in a 2D lattice imposes dramatic changes in the electronic structure of the crystal.
+
+          The dependence of the physical properties of van der Waals materials with the number of layers has been the flagship of two-dimensional (2D) materials since their discovery. In general, this layer dependence gains importance upon approaching the single layer limit, where the strict confinement of electrons in a 2D lattice imposes dramatic changes in the electronic structure of the crystal.
+
+            The dependence of the physical properties of van der Waals materials with the number of layers has been the flagship of two-dimensional (2D) materials since their discovery. In general, this layer dependence gains importance upon approaching the single layer limit, where the strict confinement of electrons in a 2D lattice imposes dramatic changes in the electronic structure of the crystal.
+
   #paper-subtitle[An example of a reusable scientific-paper layout]
 
   This text is an illustrative excerpt rather than a complete transcription of the manuscript. Replace it with your manuscript content. The main-text paragraph style, two-column measure and first-line indentation come from the IDML.
@@ -22,6 +32,10 @@
     rect(width: 100%, height: 85pt, stroke: 0.5pt + gray),
     title: [Visible-range transmittance spectra of CrI₃ crystals.],
     caption: [Measurements for different layer numbers.],
+    // placement: here,
+    placement: top,
+    // scope: "column",
+    // scope: "parent",
   ) <fig:transmittance>
 
   As shown in @fig:transmittance, the optical response changes with thickness.

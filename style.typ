@@ -68,15 +68,25 @@
 // Put a Typst label immediately after the call:  #paper-figure(...) <fig:sample>
 // The title is bold; the remaining descriptive caption is regular weight.
 // 'content' may be image("..."), a diagram, or any Typst content.
-#let paper-figure(content, title: [], caption: [], width: 100%) = {
+#let paper-figure(
+  content,
+  title: [],
+  caption: [],
+  width: 100%,
+  placement: none,
+  scope: "column",
+) = {
   figure(
     block(width: width)[#content],
     caption: [#strong(title) #caption],
     kind: image,
     supplement: [Figure],
     numbering: "1",
+    placement: placement,
+    scope: scope,
   )
 }
+
 #let table-caption(number, body) = {
   set par(first-line-indent: 0pt, justify: false)
   text(size: 8pt)[*Table #number |* #body]
