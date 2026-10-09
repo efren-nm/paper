@@ -2,7 +2,7 @@
 #show: paper-style
 
 #paper-title[Monolayer-to-mesoscale modulation of the optical properties in 2D CrI₃ mapped by hyperspectral microscopy]
-#paper-authors[Marta Galbiati¹*†, Fernando Ramiro-Manzano¹,²*†, José Joaquín Pérez Grau¹, Fernando Cantos-Prieto¹, Jaume Meseguer-Sanchez¹, Ivona Kosic¹, Filippo Mione¹, Ana Pallarés Vilar¹, Andrés Cantarero¹, David Soriano³,⁴, and Efrén Navarro-Moratalla¹*]
+#paper-authors[Marta Galbiati¹†, Fernando Ramiro-Manzano¹,²†, José Joaquín Pérez Grau¹, Fernando Cantos-Prieto¹, Jaume Meseguer-Sanchez¹, Ivona Kosic¹, Filippo Mione¹, Ana Pallarés Vilar¹, Andrés Cantarero¹, David Soriano³,⁴, and Efrén Navarro-Moratalla¹\*]
 
 // Main article: two columns, matching pages 1–5 of the reference.
 #paper-columns[
