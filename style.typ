@@ -22,38 +22,47 @@
     set par(first-line-indent: 0pt, justify: false, leading: 3pt)
     text(size: 8pt)[*#it.supplement #context it.counter.display(it.numbering) |* #it.body]
   }
-  set par(justify: true, first-line-indent: 8.5pt, leading: 2.5pt, spacing: 0pt)
+  set par(justify: true, first-line-indent: 8.5pt, leading: 4.5pt, spacing: 7pt)
   set heading(numbering: none)
   show heading: it => { set par(first-line-indent: 0pt); it }
   body
 }
 
 #let paper-title(body) = {
-  set par(first-line-indent: 0pt, justify: false)
-  text(size: 26pt, weight: "bold", body)
+  set par(first-line-indent: 0pt, justify: false, leading: 6pt)
+  text(size: 22pt, weight: "bold", body)
   v(11.34pt)
 }
+
 #let paper-authors(body) = {
-  set par(first-line-indent: 0pt, justify: false)
+  set par(first-line-indent: 0pt, justify: false, leading: 5pt)
   text(size: 12pt, weight: "light", body)
   v(12pt)
 }
+
 #let paper-abstract(body) = {
-  set par(first-line-indent: 0pt, justify: true)
+  set par(first-line-indent: 0pt, justify: true, leading: 4pt)
   text(size: 10pt, weight: "bold", body)
-  v(12.76pt)
+  v(5pt)
 }
+
 #let affiliation-block(body) = {
   set par(first-line-indent: 0pt, justify: false, leading: 1pt)
   text(size: 8pt, body)
 }
+
 #let paper-columns(body) = columns(2, gutter: column-gap)[#body]
+
 #let paper-section(title) = {
-  v(3pt)
+  v(8pt)
   block(below: 3pt)[#text(size: 10pt, weight: "bold")[#title]]
+  v(5pt)
 }
+
 #let paper-subtitle(title) = {
+  v(5pt)
   block(above: 5.67pt, below: 2.83pt)[#text(style: "italic")[#title]]
+  v(5pt)
 }
 // Create a numbered, referenceable image figure.
 // Put a Typst label immediately after the call:  #paper-figure(...) <fig:sample>
