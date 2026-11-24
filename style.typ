@@ -1,4 +1,7 @@
 // Reconstructed from arXiv_draft_v5.idml and its 18-page PDF.
+
+#import "authors.typ": *
+
 // Typography deliberately changed to Libertinus.
 // Dimensions are points unless otherwise indicated.
 #let page-width = 595.276pt
@@ -7,6 +10,10 @@
 #let column-gap = 9.6pt
 #let text-column-width = 258pt
 
+#let base-font = "Libertinus Serif"
+#let math-font = "Libertinus Math"
+#let base-size = 10pt
+
 #let paper-style(body) = {
   set page(
     paper: "a4",
@@ -14,8 +21,8 @@
     numbering: "1",
     number-align: center + bottom,
   )
-  set text(font: "Libertinus Serif", size: 10pt, fill: black, lang: "en")
-  show math.equation: set text(font: "Libertinus Math")
+  set text(font: base-font, size: 10pt, fill: black, lang: "en")
+  show math.equation: set text(font: math-font)
   // Native figure captions retain Typst's counter and cross-reference machinery.
   // Match the InDesign style: "Figure 1 | Bold title. Description..."
   show figure.caption.where(kind: image): it => {
@@ -25,6 +32,19 @@
   set par(justify: true, first-line-indent: 8.5pt, leading: 4.5pt, spacing: 7pt)
   set heading(numbering: none)
   show heading: it => { set par(first-line-indent: 0pt); it }
+  set footnote.entry(
+    clearance: 13pt,
+    gap: 5pt,
+    separator: [
+      #line(length: 30%, stroke: 0.4pt)
+      #v(10pt, weak: false)
+    ],
+  )
+  show footnote.entry: set text(
+    size: 8pt,
+    weight: 200,
+    fill: rgb("#565656"),
+  )
   body
 }
 
@@ -55,7 +75,7 @@
 
 #let paper-section(title) = {
   v(8pt)
-  block(below: 3pt)[#text(size: 10pt, weight: "bold")[#title]]
+  block(below: 3pt)[#text(size: base-size, weight: "bold")[#title]]
   v(5pt)
 }
 
