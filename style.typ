@@ -11,6 +11,7 @@
 #let text-column-width = 258pt
 
 #let base-font = "Libertinus Serif"
+#let light-font = "Libertinus Light Serif"
 #let math-font = "Libertinus Math"
 #let base-size = 10pt
 
@@ -33,14 +34,15 @@
   set heading(numbering: none)
   show heading: it => { set par(first-line-indent: 0pt); it }
   set footnote.entry(
-    clearance: 13pt,
+    clearance: 12pt,
     gap: 5pt,
     separator: [
       #line(length: 30%, stroke: 0.4pt)
-      #v(10pt, weak: false)
+      #v(8pt, weak: false)
     ],
   )
   show footnote.entry: set text(
+    font: light-font,
     size: 8pt,
     weight: 200,
     fill: rgb("#565656"),

@@ -75,7 +75,8 @@
 
   let corresponding-authors = ordered
     .filter(a => a.at("corresponding", default: false))
-    .map(a => a.name + " (" + a.email + ")")
+    // .map(a => a.name + " (" + a.email + ")")
+    .map(a =>  a.email)
     .join("; ")
 
   // Determine the order in which NEW footnotes
@@ -126,7 +127,7 @@
       } else {
         marks.push([
           #footnote[
-            Correspondence to:
+            e-mail:
             #corresponding-authors
           ]<corresponding-authors>
         ])
